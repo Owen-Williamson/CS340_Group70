@@ -23,7 +23,7 @@ CREATE TABLE Trucks (
   max_volume int NOT NULL,
   current_facility_id int,
 
-  PRIMARY KEY (truck_id)
+  PRIMARY KEY (truck_id),
   FOREIGN KEY (current_facility_id) REFERENCES Facility(facility_id)
 );
 
@@ -77,7 +77,7 @@ CREATE TABLE Deliveries (
 
 CREATE TABLE DeliveryOrders (
   delivery_id int NOT NULL,
-  order_id int NOT NULL
+  order_id int NOT NULL,
 
   FOREIGN KEY (delivery_id) REFERENCES Deliveries(delivery_id),
   FOREIGN KEY (order_id) REFERENCES Orders(order_id)
@@ -85,7 +85,7 @@ CREATE TABLE DeliveryOrders (
 
 CREATE TABLE TruckDrivers (
   driver_id int NOT NULL,
-  truck_id int NOT NULL
+  truck_id int NOT NULL,
 
   FOREIGN KEY (driver_id) REFERENCES Drivers(driver_id),
   FOREIGN KEY (truck_id) REFERENCES Trucks(truck_id)
