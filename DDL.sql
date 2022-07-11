@@ -1,0 +1,3 @@
+CREATE TABLE Test (
+    TestID int NOT NULL AUTO_INCREMENT,
+);
