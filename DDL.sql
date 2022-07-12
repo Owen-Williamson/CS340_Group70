@@ -1,12 +1,12 @@
 
-DROP TABLE TruckDrivers;
-DROP TABLE DeliveryOrders;
-DROP TABLE Deliveries;
-DROP TABLE Orders;
-DROP TABLE Trucks;
-DROP TABLE Drivers;
-DROP TABLE Facilities;
-DROP TABLE Customers;
+DROP TABLE IF EXISTS TruckDrivers;
+DROP TABLE IF EXISTS DeliveryOrders;
+DROP TABLE IF EXISTS Deliveries;
+DROP TABLE IF EXISTS Orders;
+DROP TABLE IF EXISTS Trucks;
+DROP TABLE IF EXISTS Drivers;
+DROP TABLE IF EXISTS Facilities;
+DROP TABLE IF EXISTS Customers;
 
 CREATE OR REPLACE TABLE Customers (
   customer_id int NOT NULL AUTO_INCREMENT,
@@ -29,8 +29,9 @@ CREATE OR REPLACE TABLE Facilities (
 CREATE OR REPLACE TABLE Trucks (
   truck_id int NOT NULL AUTO_INCREMENT,
   current_facility_id int,
-  max_weight int NOT NULL, -- in pounds
-  max_volume int NOT NULL, -- in cubic feet
+  plate varchar(7),
+  max_weight int NOT NULL,
+  max_volume int NOT NULL,
 
   PRIMARY KEY (truck_id),
   FOREIGN KEY (current_facility_id) REFERENCES Facilities(facility_id)
@@ -97,6 +98,7 @@ CREATE OR REPLACE TABLE TruckDrivers (
   FOREIGN KEY (truck_id) REFERENCES Trucks(truck_id)
 );
 
+
 -- Create Customers --
 INSERT INTO Customers (name, email)
 VALUES ("Local Store Owner", "1253@gmail.com");
@@ -119,9 +121,50 @@ VALUES ("Asher", "1264@gmail.com", 12, 87);
 
 -- Create Trucks --
 
-INSERT INTO Trucks (max_weight, max_volume, current_facility_id)
-VALUES (56000, 8262, NULL);
+INSERT INTO Trucks (plate, max_weight, max_volume, current_facility_id)
+VALUES ("abc 123", 56000, 8262, NULL);
+
+-- TruckDrivers --
+INSERT INTO TruckDrivers (truck_id, driver_id)
+VALUES ((SELECT truck_id FROM Trucks WHERE plate="abc 123"),
+        (SELECT driver_id FROM Drivers WHERE name="Asher"));
 
 -- Create Orders --
+INSERT INTO Orders (customer_id, volume, weight, start_facility_id, end_facility_id, current_facility_id)
+VALUES ((SELECT customer_id FROM Customers WHERE name="Local Store Owner"), 400, 80,
+        (SELECT facility_id FROM Facilities WHERE name="Salem Warehouse"),
+        (SELECT facility_id FROM Facilities WHERE name="Corvallis Store"),
+        (SELECT facility_id FROM Facilities WHERE name="Corvallis Store"));
+
+INSERT INTO Orders (customer_id, volume, weight, start_facility_id, end_facility_id, current_facility_id)
+VALUES ((SELECT customer_id FROM Customers WHERE name="Local Store Owner"), 200, 220,
+        (SELECT facility_id FROM Facilities WHERE name="Corvallis Warehouse"),
+        (SELECT facility_id FROM Facilities WHERE name="Corvallis Store"),
+        (SELECT facility_id FROM Facilities WHERE name="Corvallis Store"));
 
 -- Create Deliveries --
+INSERT INTO Deliveries (departure_time, expected_arrival_time, actual_arrival_time, total_volume, total_weight,
+                        truck_id, driver_id, start_facility_id, end_facility_id)
+VALUES ('2022-07-10 09:00:00', '2022-07-10 10:00:00', '2022-07-10 09:52:00', 80, 400,
+        (SELECT truck_id FROM Trucks WHERE plate="abc 123"),
+        (SELECT driver_id FROM Drivers WHERE name="Asher"),
+        (SELECT facility_id FROM Facilities WHERE name="Salem Warehouse"),
+        (SELECT facility_id FROM Facilities WHERE name="Corvallis Warehouse"));
+
+INSERT INTO Deliveries (departure_time, expected_arrival_time, actual_arrival_time, total_volume, total_weight,
+                        truck_id, driver_id, start_facility_id, end_facility_id)
+VALUES ('2022-07-11 13:00:00', '2022-07-10 13:25:00', '2022-07-11 03:47:00', 280, 620,
+        (SELECT truck_id FROM Trucks WHERE plate="abc 123"),
+        (SELECT driver_id FROM Drivers WHERE name="Asher"),
+        (SELECT facility_id FROM Facilities WHERE name="Corvallis Warehouse"),
+        (SELECT facility_id FROM Facilities WHERE name="Corvallis Store"));
+
+-- Delivery Orders --
+INSERT INTO DeliveryOrders (delivery_id, order_id)
+VALUES (1, 1);
+
+INSERT INTO DeliveryOrders (delivery_id, order_id)
+VALUES (2, 1);
+
+INSERT INTO DeliveryOrders (delivery_id, order_id)
+VALUES (2, 2);
