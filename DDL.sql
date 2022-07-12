@@ -1,4 +1,13 @@
 
+DROP TABLE TruckDrivers;
+DROP TABLE DeliveryOrders;
+DROP TABLE Deliveries;
+DROP TABLE Orders;
+DROP TABLE Trucks;
+DROP TABLE Drivers;
+DROP TABLE Facilities;
+DROP TABLE Customers;
+
 CREATE OR REPLACE TABLE Customers (
   customer_id int NOT NULL AUTO_INCREMENT,
   name varchar(45) NOT NULL,
