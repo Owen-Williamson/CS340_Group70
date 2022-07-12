@@ -1,5 +1,5 @@
 
-CREATE TABLE Customers (
+CREATE OR REPLACE TABLE Customers (
   customer_id int NOT NULL AUTO_INCREMENT,
   name varchar(45) NOT NULL,
   email varchar(45) NOT NULL,
@@ -7,7 +7,7 @@ CREATE TABLE Customers (
   PRIMARY KEY (customer_id)
 );
 
-CREATE TABLE Facilities (
+CREATE OR REPLACE TABLE Facilities (
   facility_id int NOT NULL AUTO_INCREMENT,
   customer_id int,
   location varchar(45) NOT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE Facilities (
   FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 );
 
-CREATE TABLE Trucks (
+CREATE OR REPLACE TABLE Trucks (
   truck_id int NOT NULL AUTO_INCREMENT,
   current_facility_id int,
   max_weight int NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE Trucks (
   FOREIGN KEY (current_facility_id) REFERENCES Facilities(facility_id)
 );
 
-CREATE TABLE Drivers (
+CREATE OR REPLACE TABLE Drivers (
   driver_id int NOT NULL AUTO_INCREMENT,
   name varchar(45) NOT NULL,
   email varchar(45) NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE Drivers (
   PRIMARY KEY (driver_id)
 );
 
-CREATE TABLE Orders (
+CREATE OR REPLACE TABLE Orders (
   order_id int NOT NULL AUTO_INCREMENT,
   customer_id int,
   start_facility_id int,
@@ -53,7 +53,7 @@ CREATE TABLE Orders (
   FOREIGN KEY (current_facility_id) REFERENCES Facilities(facility_id)
 );
 
-CREATE TABLE Deliveries (
+CREATE OR REPLACE TABLE Deliveries (
   delivery_id int NOT NULL AUTO_INCREMENT,
   driver_id int NOT NULL,
   truck_id int NOT NULL,
@@ -74,16 +74,33 @@ CREATE TABLE Deliveries (
   FOREIGN KEY (end_facility_id) REFERENCES Facilities(facility_id)
 );
 
-CREATE TABLE DeliveryOrders (
+CREATE OR REPLACE TABLE DeliveryOrders (
   delivery_id int NOT NULL,
   order_id int NOT NULL,
   FOREIGN KEY (delivery_id) REFERENCES Deliveries(delivery_id),
   FOREIGN KEY (order_id) REFERENCES Orders(order_id)
 );
 
-CREATE TABLE TruckDrivers (
+CREATE OR REPLACE TABLE TruckDrivers (
   driver_id int NOT NULL,
   truck_id int NOT NULL,
   FOREIGN KEY (driver_id) REFERENCES Drivers(driver_id),
   FOREIGN KEY (truck_id) REFERENCES Trucks(truck_id)
 );
+
+-- Create Drivers --
+
+
+
+
+-- Create Trucks --
+
+-- Create Facilities --
+
+-- Create Customers --
+INSERT INTO Customers (name, email)
+VALUES ("Local Store Owner", "123@gmail.com");
+
+-- Create Orders --
+
+-- Create Deliveries --
