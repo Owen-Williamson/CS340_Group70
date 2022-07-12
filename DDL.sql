@@ -29,8 +29,8 @@ CREATE OR REPLACE TABLE Facilities (
 CREATE OR REPLACE TABLE Trucks (
   truck_id int NOT NULL AUTO_INCREMENT,
   current_facility_id int,
-  max_weight int NOT NULL,
-  max_volume int NOT NULL,
+  max_weight int NOT NULL, -- in pounds
+  max_volume int NOT NULL, -- in cubic feet
 
   PRIMARY KEY (truck_id),
   FOREIGN KEY (current_facility_id) REFERENCES Facilities(facility_id)
@@ -97,18 +97,30 @@ CREATE OR REPLACE TABLE TruckDrivers (
   FOREIGN KEY (truck_id) REFERENCES Trucks(truck_id)
 );
 
--- Create Drivers --
-
-
-
-
--- Create Trucks --
+-- Create Customers --
+INSERT INTO Customers (name, email)
+VALUES ("Local Store Owner", "1253@gmail.com");
 
 -- Create Facilities --
 
--- Create Customers --
-INSERT INTO Customers (name, email)
-VALUES ("Local Store Owner", "123@gmail.com");
+INSERT INTO Facilities (name, location, customer_id)
+VALUES ("Corvallis Warehouse", "Corvallis OR", NULL);
+
+INSERT INTO Facilities (name, location, customer_id)
+VALUES ("Salem Warehouse", "Salem OR", NULL);
+
+INSERT INTO Facilities (name, location, customer_id)
+VALUES ("Corvallis Store", "Corvallis OR", (SELECT customer_id FROM Customers WHERE name="Local Store Owner"));
+
+-- Create Drivers --
+
+INSERT INTO Drivers (name, email, late_deliveries, early_deliveries)
+VALUES ("Asher", "1264@gmail.com", 12, 87);
+
+-- Create Trucks --
+
+INSERT INTO Trucks (max_weight, max_volume, current_facility_id)
+VALUES (56000, 8262, NULL);
 
 -- Create Orders --
 
