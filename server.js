@@ -28,7 +28,7 @@ var db = require('./db-connector')
 
 /*
     ROUTES
-*/
+
 app.get('/', function(req, res)
     {
         // Define our queries
@@ -59,3 +59,5 @@ app.get('/', function(req, res)
             });
         });
     });
+
+*/
