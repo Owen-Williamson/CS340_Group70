@@ -1,5 +1,12 @@
 {
+  "scripts": {
+    "dev": "node node_modules/nodemon/bin/nodemon.js server.js"
+  },
   "dependencies": {
-    "node": "^18.5.0"
+    "express": "^4.18.1",
+    "forever": "^4.0.3",
+    "mysql": "^2.18.1",
+    "node": "^18.5.0",
+    "nodemon": "^2.0.15"
   }
 }
