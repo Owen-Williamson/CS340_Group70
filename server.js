@@ -24,7 +24,24 @@ var pool = mysql.createPool({
 module.exports.pool = pool;
 
 // Database
-var db = require('./db-connector')
+var db = require('./db-connector');
+
+
+app.get('/', function(req, res) {
+  res.status(200).render("homePage", {});
+});
+
+
+app.get('/drivers', function(req, res) {
+  res.status(200).render("drivers", {});
+});
+
+
+
+app.listen(PORT, function(){            // This is the basic syntax for what is called the 'listener' which receives incoming requests on the specified PORT.
+    console.log('Express started on http://localhost:' + PORT + '; press Ctrl-C to terminate.')
+});
+
 
 /*
     ROUTES
