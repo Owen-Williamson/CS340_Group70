@@ -1,5 +1,33 @@
 <main>
 
+  <table>
+    <tr>
+      <th>new</th>
+      <th></th>
+      <th>id</th>
+      <th>name</th>
+      <th>email</th>
+      <th>late deliveries</th>
+      <th>early deliveries</th>
+    </tr>
 
+    {{#each drivers}}
+      {{> driverRow id=@id}}
+    {{/each}}
+
+  </table>
+
+
+  <form action="/">
+    <label for="dName">Name:</label><br>
+    <input type="text" id="dName" name="dName"><br>
+    <label for="dEmail">Email:</label><br>
+    <input type="text"><br>
+    <label for="dLateDeliveries">LateDeliveries:</label><br>
+    <input type="number"><br>
+    <label for="dEarlyDeliveries">EarlyDeliveries:</label><br>
+    <input type="number"><br>
+    <input type="submit" value="Submit">
+  </form>
 
 </main>

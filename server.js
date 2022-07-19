@@ -24,22 +24,33 @@ var pool = mysql.createPool({
 module.exports.pool = pool;
 
 // Database
-var db = require('./db-connector');
+//var db = require('./db-connector');
 
 
 app.get('/', function(req, res) {
   res.status(200).render("homePage", {});
 });
 
+/*
+// serve all entity handlebar pages (they don't exist yet though)
+app.get('/:entity', function(req, res) {
+  var entity = req.params.entity;
+  res.status(200).render(entity, {});
+});
+*/
 
 app.get('/drivers', function(req, res) {
-  res.status(200).render("drivers", {});
+  res.status(200).render("drivers",{
+    drivers: [
+      {"id":"0", "name":"0", "email":"0", "ld":"0", "ed":"0"},
+      {"id":"1", "name":"1", "email":"1", "ld":"1", "ed":"1"}
+    ]}
+  );
 });
 
-
-
-app.listen(PORT, function(){            // This is the basic syntax for what is called the 'listener' which receives incoming requests on the specified PORT.
-    console.log('Express started on http://localhost:' + PORT + '; press Ctrl-C to terminate.')
+// add the listener
+app.listen(PORT, function(){
+  console.log('Express started on http://localhost:' + PORT + '; press Ctrl-C to terminate.')
 });
 
 
