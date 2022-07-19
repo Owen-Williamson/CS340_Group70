@@ -1,0 +1,28 @@
+<main>
+
+  <table>
+    <tr>
+      <th>new</th>
+      <th></th>
+      <th>id</th>
+      <th>driver_id</th>
+      <th>truck_id</th>
+      <th>start_facility_id</th>
+      <th>end_facility_id</th>
+      <th>total_weight</th>
+      <th>total_volume</th>
+      <th>late</th>
+      <th>departure_time</th>
+      <th>expected_arrival_time</th>
+      <th>actual_arrival_time</th>
+    </tr>
+
+    {{#each facilities}}
+      {{> facilityRow id=@id}}
+    /each}}
+
+  </table>
+
+
+
+</main>
