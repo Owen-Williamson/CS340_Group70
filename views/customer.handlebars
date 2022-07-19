@@ -1,0 +1,20 @@
+<main>
+
+  <table>
+    <tr>
+      <th>new</th>
+      <th></th>
+      <th>id</th>
+      <th>name</th>
+      <th>email</th>
+    </tr>
+
+    {{#each customers}}
+      {{> customerRow id=@id}}
+    {{/each}}
+
+  </table>
+
+
+
+</main>
