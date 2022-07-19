@@ -5,8 +5,8 @@ var exphbs = require('express-handlebars');
 var app = express();
 PORT = 9124;
 
-//app.engine('handlebars', exphbs.engine({defaultLayout: 'main'}));
-//app.set('view engine', 'handlebars');
+app.engine('handlebars', exphbs.engine({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
 
 // Get an instance of mysql we can use in the app
 var mysql = require('mysql')
@@ -29,22 +29,18 @@ module.exports.pool = pool;
 
 app.use(express.static('public'));
 
-
-/*
-// serve all entity handlebar pages (they don't exist yet though)
-
 app.get('/', function(req, res) {
   res.status(200).render("homePage", {});
 });
 
-
+/*
+// serve all entity handlebar pages (they don't exist yet though)
 app.get('/:entity', function(req, res) {
   var entity = req.params.entity;
   res.status(200).render(entity, {});
 });
 */
 
-/*
 // serving the handlebar files
 
 app.get('/drivers', function(req, res) {
@@ -59,8 +55,8 @@ app.get('/drivers', function(req, res) {
 app.get('/trucks', function(req, res) {
   res.status(200).render("trucks",{
     trucks: [
-      {"id":"0", "current_facility_id":"0", "plate":"0", "max_weight":"0", "min_weight":"0"},
-      {"id":"1", "current_facility_id":"1", "plate":"1", "max_weight":"1", "min_weight":"1"}
+      {"id":"0", "current_facility_id":"0", "plate":"0", "max_weight":"0", "max_volume":"0"},
+      {"id":"1", "current_facility_id":"1", "plate":"1", "max_weight":"1", "max_volume":"1"}
     ]}
   );
 });
@@ -68,8 +64,8 @@ app.get('/trucks', function(req, res) {
 app.get('/customers', function(req, res) {
   res.status(200).render("customers",{
     customers: [
-      {"id":"0", "name":"0", "email":"0"},
-      {"id":"1", "name":"1", "email":"1"}
+      {"id":"0", "name":"0", "email":"3"},
+      {"id":"1", "name":"2", "email":"1"}
     ]}
   );
 });
@@ -105,7 +101,7 @@ app.get('/orders', function(req, res) {
 app.listen(PORT, function(){
   console.log('Express started on http://localhost:' + PORT + '; press Ctrl-C to terminate.')
 });
-*/
+
 
 /*
     ROUTES
