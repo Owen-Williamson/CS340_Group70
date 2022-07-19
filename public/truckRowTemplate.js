@@ -8,16 +8,16 @@ templates['truckRow'] = template({"compiler":[8,">= 4.3.0"],"main":function(cont
         return undefined
     };
 
-  return "<tr class=\"truck-row\" data-id=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"id") || (depth0 != null ? lookupProperty(depth0,"id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data,"loc":{"start":{"line":1,"column":31},"end":{"line":1,"column":37}}}) : helper)))
+  return "<tr class=\"et-row\" class=\"et-data-row\" class=\"truck-row\" data-id=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"id") || (depth0 != null ? lookupProperty(depth0,"id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data,"loc":{"start":{"line":1,"column":66},"end":{"line":1,"column":72}}}) : helper)))
     + "\" data-cf-id=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"current_facility_id") || (depth0 != null ? lookupProperty(depth0,"current_facility_id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"current_facility_id","hash":{},"data":data,"loc":{"start":{"line":1,"column":51},"end":{"line":1,"column":74}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"current_facility_id") || (depth0 != null ? lookupProperty(depth0,"current_facility_id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"current_facility_id","hash":{},"data":data,"loc":{"start":{"line":1,"column":86},"end":{"line":1,"column":109}}}) : helper)))
     + "\" data-plate=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"plate") || (depth0 != null ? lookupProperty(depth0,"plate") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"plate","hash":{},"data":data,"loc":{"start":{"line":1,"column":88},"end":{"line":1,"column":97}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"plate") || (depth0 != null ? lookupProperty(depth0,"plate") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"plate","hash":{},"data":data,"loc":{"start":{"line":1,"column":123},"end":{"line":1,"column":132}}}) : helper)))
     + "\" data-mw=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"max_weight") || (depth0 != null ? lookupProperty(depth0,"max_weight") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"max_weight","hash":{},"data":data,"loc":{"start":{"line":1,"column":108},"end":{"line":1,"column":122}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"max_weight") || (depth0 != null ? lookupProperty(depth0,"max_weight") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"max_weight","hash":{},"data":data,"loc":{"start":{"line":1,"column":143},"end":{"line":1,"column":157}}}) : helper)))
     + "\" data-mv=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"max_volume") || (depth0 != null ? lookupProperty(depth0,"max_volume") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"max_volume","hash":{},"data":data,"loc":{"start":{"line":1,"column":133},"end":{"line":1,"column":147}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"max_volume") || (depth0 != null ? lookupProperty(depth0,"max_volume") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"max_volume","hash":{},"data":data,"loc":{"start":{"line":1,"column":168},"end":{"line":1,"column":182}}}) : helper)))
     + "\">\r\n  <td>add</td>\r\n  <td>delete</td>\r\n  <td>"
     + alias4(((helper = (helper = lookupProperty(helpers,"id") || (depth0 != null ? lookupProperty(depth0,"id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data,"loc":{"start":{"line":4,"column":6},"end":{"line":4,"column":12}}}) : helper)))
     + "</td>\r\n  <td>"

@@ -8,20 +8,20 @@ templates['orderRow'] = template({"compiler":[8,">= 4.3.0"],"main":function(cont
         return undefined
     };
 
-  return "<tr class=\"order-row\" data-id=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"id") || (depth0 != null ? lookupProperty(depth0,"id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data,"loc":{"start":{"line":1,"column":31},"end":{"line":1,"column":37}}}) : helper)))
+  return "<tr class=\"et-row\" class=\"et-data-row\" class=\"order-row\" data-id=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"id") || (depth0 != null ? lookupProperty(depth0,"id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data,"loc":{"start":{"line":1,"column":66},"end":{"line":1,"column":72}}}) : helper)))
     + "\" data-c-id=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"customer_id") || (depth0 != null ? lookupProperty(depth0,"customer_id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"customer_id","hash":{},"data":data,"loc":{"start":{"line":1,"column":50},"end":{"line":1,"column":65}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"customer_id") || (depth0 != null ? lookupProperty(depth0,"customer_id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"customer_id","hash":{},"data":data,"loc":{"start":{"line":1,"column":85},"end":{"line":1,"column":100}}}) : helper)))
     + "\" data-sf-id=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"start_facility_id") || (depth0 != null ? lookupProperty(depth0,"start_facility_id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"start_facility_id","hash":{},"data":data,"loc":{"start":{"line":1,"column":79},"end":{"line":1,"column":100}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"start_facility_id") || (depth0 != null ? lookupProperty(depth0,"start_facility_id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"start_facility_id","hash":{},"data":data,"loc":{"start":{"line":1,"column":114},"end":{"line":1,"column":135}}}) : helper)))
     + "\" data-ef-id=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"end_facility_id") || (depth0 != null ? lookupProperty(depth0,"end_facility_id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"end_facility_id","hash":{},"data":data,"loc":{"start":{"line":1,"column":114},"end":{"line":1,"column":133}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"end_facility_id") || (depth0 != null ? lookupProperty(depth0,"end_facility_id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"end_facility_id","hash":{},"data":data,"loc":{"start":{"line":1,"column":149},"end":{"line":1,"column":168}}}) : helper)))
     + "\" data-cf-id=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"current_facility_id") || (depth0 != null ? lookupProperty(depth0,"current_facility_id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"current_facility_id","hash":{},"data":data,"loc":{"start":{"line":1,"column":147},"end":{"line":1,"column":170}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"current_facility_id") || (depth0 != null ? lookupProperty(depth0,"current_facility_id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"current_facility_id","hash":{},"data":data,"loc":{"start":{"line":1,"column":182},"end":{"line":1,"column":205}}}) : helper)))
     + "\" data-weight=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"weight") || (depth0 != null ? lookupProperty(depth0,"weight") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"weight","hash":{},"data":data,"loc":{"start":{"line":1,"column":185},"end":{"line":1,"column":195}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"weight") || (depth0 != null ? lookupProperty(depth0,"weight") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"weight","hash":{},"data":data,"loc":{"start":{"line":1,"column":220},"end":{"line":1,"column":230}}}) : helper)))
     + "\" data-volume=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"volume") || (depth0 != null ? lookupProperty(depth0,"volume") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"volume","hash":{},"data":data,"loc":{"start":{"line":1,"column":210},"end":{"line":1,"column":220}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"volume") || (depth0 != null ? lookupProperty(depth0,"volume") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"volume","hash":{},"data":data,"loc":{"start":{"line":1,"column":245},"end":{"line":1,"column":255}}}) : helper)))
     + "\">\r\n  <td>add</td>\r\n  <td>delete</td>\r\n  <td>"
     + alias4(((helper = (helper = lookupProperty(helpers,"id") || (depth0 != null ? lookupProperty(depth0,"id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data,"loc":{"start":{"line":4,"column":6},"end":{"line":4,"column":12}}}) : helper)))
     + "</td>\r\n  <td>"
