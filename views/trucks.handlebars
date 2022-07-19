@@ -1,0 +1,20 @@
+<main>
+
+  <table>
+    <tr>
+      <th>new</th>
+      <th></th>
+      <th>id</th>
+      <th>name</th>
+      <th>email</th>
+      <th>late deliveries</th>
+      <th>early deliveries</th>
+    </tr>
+
+    {{#each trucks}}
+      {{> truckRow id=@id}}
+    {{/each}}
+
+  </table>
+
+</main>
