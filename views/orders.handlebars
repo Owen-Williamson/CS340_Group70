@@ -1,0 +1,24 @@
+<main>
+
+  <table>
+    <tr>
+      <th>new</th>
+      <th></th>
+      <th>id</th>
+      <th>customer_id</th>
+      <th>start facility id</th>
+      <th>end facility id</th>
+      <th>current facility id</th>
+      <th>weight</th>
+      <th>volume</th>
+    </tr>
+
+    {{#each orders}}
+      {{> orderRow id=@id}}
+    {{/each}}
+
+  </table>
+
+
+
+</main>
