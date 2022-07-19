@@ -1,0 +1,21 @@
+<main>
+
+  <table>
+    <tr>
+      <th>new</th>
+      <th></th>
+      <th>id</th>
+      <th>customer_id</th>
+      <th>location</th>
+      <th>name</th>
+    </tr>
+
+    {{#each facilities}}
+      {{> facilityRow id=@id}}
+    {{/each}}
+
+  </table>
+
+
+
+</main>
