@@ -5,8 +5,8 @@ var exphbs = require('express-handlebars');
 var app = express();
 PORT = 9124;
 
-app.engine('handlebars', exphbs.engine({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
+//app.engine('handlebars', exphbs.engine({defaultLayout: 'main'}));
+//app.set('view engine', 'handlebars');
 
 // Get an instance of mysql we can use in the app
 var mysql = require('mysql')
@@ -29,12 +29,15 @@ module.exports.pool = pool;
 
 app.use(express.static('public'));
 
+
+/*
+// serve all entity handlebar pages (they don't exist yet though)
+
 app.get('/', function(req, res) {
   res.status(200).render("homePage", {});
 });
 
-/*
-// serve all entity handlebar pages (they don't exist yet though)
+
 app.get('/:entity', function(req, res) {
   var entity = req.params.entity;
   res.status(200).render(entity, {});
