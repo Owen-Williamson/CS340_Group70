@@ -41,6 +41,9 @@ app.get('/:entity', function(req, res) {
 });
 */
 
+/*
+// serving the handlebar files
+
 app.get('/drivers', function(req, res) {
   res.status(200).render("drivers",{
     drivers: [
@@ -99,7 +102,7 @@ app.get('/orders', function(req, res) {
 app.listen(PORT, function(){
   console.log('Express started on http://localhost:' + PORT + '; press Ctrl-C to terminate.')
 });
-
+*/
 
 /*
     ROUTES
