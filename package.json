@@ -2,13 +2,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "npm run build && node node_modules/nodemon/bin/nodemon.js server.js",
-    "build": "handlebars views/partials/driverRow.handlebars -f public/driverRowTemplate.js
-              && handlebars views/partials/driverRow.handlebars -f public/driverRowTemplate.js
-              && handlebars views/partials/truckRow.handlebars -f public/truckRowTemplate.js
-              && handlebars views/partials/customerRow.handlebars -f public/customerRowTemplate.js
-              && handlebars views/partials/facilityRow.handlebars -f public/facilityRowTemplate.js
-              && handlebars views/partials/deliveryRow.handlebars -f public/deliveryRowTemplate.js
-              && handlebars views/partials/orderRow.handlebars -f public/orderRowTemplate.js",
+    "build": "handlebars views/partials/driverRow.handlebars -f public/driverRowTemplate.js && handlebars views/partials/driverRow.handlebars -f public/driverRowTemplate.js && handlebars views/partials/truckRow.handlebars -f public/truckRowTemplate.js && handlebars views/partials/customerRow.handlebars -f public/customerRowTemplate.js && handlebars views/partials/facilityRow.handlebars -f public/facilityRowTemplate.js && handlebars views/partials/deliveryRow.handlebars -f public/deliveryRowTemplate.js && handlebars views/partials/orderRow.handlebars -f public/orderRowTemplate.js",
     "prestart": "npm run build"
   },
   "dependencies": {
