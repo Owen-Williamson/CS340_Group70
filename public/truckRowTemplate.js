@@ -18,16 +18,16 @@ templates['truckRow'] = template({"compiler":[8,">= 4.3.0"],"main":function(cont
     + alias4(((helper = (helper = lookupProperty(helpers,"max_weight") || (depth0 != null ? lookupProperty(depth0,"max_weight") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"max_weight","hash":{},"data":data,"loc":{"start":{"line":1,"column":108},"end":{"line":1,"column":122}}}) : helper)))
     + "\" data-mv=\""
     + alias4(((helper = (helper = lookupProperty(helpers,"max_volume") || (depth0 != null ? lookupProperty(depth0,"max_volume") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"max_volume","hash":{},"data":data,"loc":{"start":{"line":1,"column":133},"end":{"line":1,"column":147}}}) : helper)))
-    + "\">\r\n  <th>add</th>\r\n  <th>delete</th>\r\n  <th>"
+    + "\">\r\n  <td>add</td>\r\n  <td>delete</td>\r\n  <td>"
     + alias4(((helper = (helper = lookupProperty(helpers,"id") || (depth0 != null ? lookupProperty(depth0,"id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data,"loc":{"start":{"line":4,"column":6},"end":{"line":4,"column":12}}}) : helper)))
-    + "</th>\r\n  <th>"
+    + "</td>\r\n  <td>"
     + alias4(((helper = (helper = lookupProperty(helpers,"current_facility_id") || (depth0 != null ? lookupProperty(depth0,"current_facility_id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"current_facility_id","hash":{},"data":data,"loc":{"start":{"line":5,"column":6},"end":{"line":5,"column":29}}}) : helper)))
-    + "</th>\r\n  <th>"
+    + "</td>\r\n  <td>"
     + alias4(((helper = (helper = lookupProperty(helpers,"plate") || (depth0 != null ? lookupProperty(depth0,"plate") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"plate","hash":{},"data":data,"loc":{"start":{"line":6,"column":6},"end":{"line":6,"column":15}}}) : helper)))
-    + "</th>\r\n  <th>"
+    + "</td>\r\n  <td>"
     + alias4(((helper = (helper = lookupProperty(helpers,"max_weight") || (depth0 != null ? lookupProperty(depth0,"max_weight") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"max_weight","hash":{},"data":data,"loc":{"start":{"line":7,"column":6},"end":{"line":7,"column":20}}}) : helper)))
-    + "</th>\r\n  <th>"
+    + "</td>\r\n  <td>"
     + alias4(((helper = (helper = lookupProperty(helpers,"max_volume") || (depth0 != null ? lookupProperty(depth0,"max_volume") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"max_volume","hash":{},"data":data,"loc":{"start":{"line":8,"column":6},"end":{"line":8,"column":20}}}) : helper)))
-    + "</th>\r\n</tr>\r\n";
+    + "</td>\r\n</tr>\r\n";
 },"useData":true});
 })();
