@@ -8,14 +8,14 @@ PORT = 50077;
 app.engine('handlebars', exphbs.engine({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-//db = require("./db-connector.js");
+db = require("./db-connector.js");
 
 app.use(express.static('public'));
 
 app.get('/', function(req, res) {
-  //var query1 = 'SELECT * FROM Customers;';
-  //console.log("Pool: " + db.pool);
-  //console.log(db.pool.query(query1, function(err, results, fields){}))
+  var query1 = 'SELECT * FROM Customers;';
+  console.log("Pool: " + db.pool);
+  console.log(db.pool.query(query1, function(err, results, fields){}))
   res.status(200).render("homePage", {});
 });
 
