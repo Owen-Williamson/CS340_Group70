@@ -30,6 +30,8 @@ app.get('/:entity', function(req, res) {
 
 // serving the handlebar files
 
+/*
+
 app.get('/drivers', function(req, res) {
   res.status(200).render("drivers",{
     drivers: [
