@@ -8,28 +8,14 @@ PORT = 9124;
 app.engine('handlebars', exphbs.engine({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-// Get an instance of mysql we can use in the app
-var mysql = require('mysql')
-
-// Create a 'connection pool' using the provided credentials
-var pool = mysql.createPool({
-    connectionLimit : 10,
-    host            : 'classmysql.engr.oregonstate.edu',
-    user            : 'cs340_[your_onid]',
-    password        : '[your_db_password]',
-    database        : 'cs340_[your_onid]'
-})
-
-// Export it for use in our application
-module.exports.pool = pool;
-
-// Database
-//var db = require('./db-connector');
-
+db = require("./db-connector.js");
 
 app.use(express.static('public'));
 
 app.get('/', function(req, res) {
+  var query1 = 'SELECT * FROM Customers;';
+  console.log("Pool: " + db.pool);
+  console.log(db.pool.query(query1, function(err, results, fields){}))
   res.status(200).render("homePage", {});
 });
 
