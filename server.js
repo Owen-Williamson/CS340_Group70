@@ -10,6 +10,7 @@ app.set('view engine', 'handlebars');
 
 db = require("./db-connector.js");
 
+/*
 app.use(express.static('public'));
 
 app.get('/', function(req, res) {
@@ -89,9 +90,9 @@ app.listen(PORT, function(){
 });
 
 
-/*
-    ROUTES
 
+    ROUTES
+*/
 app.get('/', function(req, res)
     {
         // Define our queries
@@ -122,5 +123,3 @@ app.get('/', function(req, res)
             });
         });
     });
-
-*/
