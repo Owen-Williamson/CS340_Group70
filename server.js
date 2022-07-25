@@ -86,15 +86,14 @@ app.get('/orders', function(req, res) {
   );
 });
 
+*/
+
 // add the listener
 app.listen(PORT, function(){
   console.log('Express started on http://localhost:' + PORT + '; press Ctrl-C to terminate.')
 });
 
 
-
-    ROUTES
-*/
 app.get('/', function(req, res)
     {
         // Define our queries
