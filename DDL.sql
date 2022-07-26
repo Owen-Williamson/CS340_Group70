@@ -23,7 +23,7 @@ CREATE OR REPLACE TABLE Facilities (
   name varchar(45) NOT NULL,
 
   PRIMARY KEY (facility_id),
-  FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
+  FOREIGN KEY (customer_id) REFERENCES Customers(customer_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE OR REPLACE TABLE Trucks (
@@ -34,7 +34,7 @@ CREATE OR REPLACE TABLE Trucks (
   max_volume int NOT NULL,
 
   PRIMARY KEY (truck_id),
-  FOREIGN KEY (current_facility_id) REFERENCES Facilities(facility_id)
+  FOREIGN KEY (current_facility_id) REFERENCES Facilities(facility_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE OR REPLACE TABLE Drivers (
@@ -57,10 +57,10 @@ CREATE OR REPLACE TABLE Orders (
   weight int NOT NULL,
 
   PRIMARY KEY (order_id),
-  FOREIGN KEY (customer_id) REFERENCES Customers(customer_id),
-  FOREIGN KEY (start_facility_id) REFERENCES Facilities(facility_id),
-  FOREIGN KEY (end_facility_id) REFERENCES Facilities(facility_id),
-  FOREIGN KEY (current_facility_id) REFERENCES Facilities(facility_id)
+  FOREIGN KEY (customer_id) REFERENCES Customers(customer_id) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (start_facility_id) REFERENCES Facilities(facility_id) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (end_facility_id) REFERENCES Facilities(facility_id) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (current_facility_id) REFERENCES Facilities(facility_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE OR REPLACE TABLE Deliveries (
@@ -78,24 +78,24 @@ CREATE OR REPLACE TABLE Deliveries (
   actual_arrival_time datetime,
 
   PRIMARY KEY (delivery_id),
-  FOREIGN KEY (driver_id) REFERENCES Drivers(driver_id),
-  FOREIGN KEY (truck_id) REFERENCES Trucks(truck_id),
-  FOREIGN KEY (start_facility_id) REFERENCES Facilities(facility_id),
-  FOREIGN KEY (end_facility_id) REFERENCES Facilities(facility_id)
+  FOREIGN KEY (driver_id) REFERENCES Drivers(driver_id) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (truck_id) REFERENCES Trucks(truck_id) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (start_facility_id) REFERENCES Facilities(facility_id) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (end_facility_id) REFERENCES Facilities(facility_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE OR REPLACE TABLE DeliveryOrders (
   delivery_id int NOT NULL,
   order_id int NOT NULL,
-  FOREIGN KEY (delivery_id) REFERENCES Deliveries(delivery_id),
-  FOREIGN KEY (order_id) REFERENCES Orders(order_id)
+  FOREIGN KEY (delivery_id) REFERENCES Deliveries(delivery_id) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (order_id) REFERENCES Orders(order_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE OR REPLACE TABLE TruckDrivers (
   driver_id int NOT NULL,
   truck_id int NOT NULL,
-  FOREIGN KEY (driver_id) REFERENCES Drivers(driver_id),
-  FOREIGN KEY (truck_id) REFERENCES Trucks(truck_id)
+  FOREIGN KEY (driver_id) REFERENCES Drivers(driver_id) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (truck_id) REFERENCES Trucks(truck_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 
