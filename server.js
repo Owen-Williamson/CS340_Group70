@@ -10,7 +10,7 @@ app.set('view engine', 'handlebars');
 
 db = require("./db-connector.js");
 
-/*
+
 app.use(express.static('public'));
 
 app.get('/', function(req, res) {
@@ -30,7 +30,7 @@ app.get('/:entity', function(req, res) {
 
 // serving the handlebar files
 
-/*
+
 
 app.get('/drivers', function(req, res) {
   res.status(200).render("drivers",{
@@ -86,7 +86,7 @@ app.get('/orders', function(req, res) {
   );
 });
 
-*/
+
 
 // add the listener
 app.listen(PORT, function(){
