@@ -9,7 +9,8 @@ DELETE FROM Trucks WHERE truck_id=:t_id;
 UPDATE Trucks SET plate=:plate, max_volume=:max_volume, max_weight=:max_weight, current_facility_id=:cf_id
 WHERE truck_id=:t_id;
 
-SELECT * FROM Trucks WHERE truck_id=:t_id;
+SELECT Trucks.truck_id, Trucks.plate, Trucks.min_weight, Trucks.max_weight, Facilities.name FROM Trucks WHERE truck_id=:t_id
+JOIN Facilities ON Trucks.current_facility_id=Facilities.facility_id;
 
 -- Drivers
 INSERT INTO Drivers (name, email, late_deliveries, early_deliveries)
@@ -31,7 +32,8 @@ DELETE FROM Facilities WHERE facility_id=:f_id;
 UPDATE Facilities SET name=:name, location=:location, customer_id=:c_id
 WHERE facility_id=:f_id;
 
-SELECT * FROM Facilities WHERE facility_id=:f_id;
+SELECT Facilities.facility_id, Facilities.name, Facilities.location, Customers.name FROM Facilities WHERE facility_id=:f_id
+JOIN Customers ON Facilities.customer_id=Customers.customer_id;
 
 -- Customers
 INSERT INTO Customers (name, email)
